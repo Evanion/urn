@@ -65,4 +65,4 @@ workflows:
       - node-16
       - node-latest:
           context:
-            - sonarcloud
+            - SonarCloud
