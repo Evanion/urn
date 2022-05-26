@@ -56,7 +56,10 @@ export class URN {
     if (!this.isValid.test(urn)) throw new InvalidError('URN');
     if (!this.isValid.test(nid)) throw new InvalidError('NID');
 
-    return urn.concat(this.separator, nid.concat(this.separator, nss));
+    if (nss.startsWith(`${nid}${this.separator}`))
+      return `${urn}${this.separator}${nss}`;
+
+    return `${urn}${this.separator}${nid}${this.separator}${nss}`;
   }
 
   /**
