@@ -1,3 +1,4 @@
 # urn
 
-A RFC 8141 compliant URN Library that makes it easier to work with more meaningfull identifiers
+A URN Library that makes it easier to work with more meaningful identifiers.
+The API is inspired by, and designed to be as simple as the JSON class.

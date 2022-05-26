@@ -1,13 +1,13 @@
 {
-  "name": "urn",
+  "name": "@evanion/urn",
   "version": "1.0.0",
-  "description": "A RFC 8141 compliant URN Library that makes it easier to work with more meaningfull identifiers",
+  "description": "A URN Library that makes it easier to work with more meaningful identifiers.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
   "repository": "https://github.com/Evanion/urn",
   "license": "MIT",
-  "keywords": [],
+  "keywords": ["urn", "identifier"],
   "scripts": {
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.json",
