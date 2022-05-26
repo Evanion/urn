@@ -1,5 +1,7 @@
 # https://circleci.com/docs/2.0/language-javascript/
-version: 2
+version: 2.1
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.1.0
 jobs:
   'node-14':
     docker:
@@ -53,12 +55,13 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test
       - run: yarn cov:send
+      - sonarcloud/scan
       - run: yarn cov:check
 
 workflows:
-  version: 2
   build:
     jobs:
       - 'node-14'
       - 'node-16'
-      - 'node-latest'
+      - 'node-latest':
+        context: SonarCloud
