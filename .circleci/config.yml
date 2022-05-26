@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.1.0
 jobs:
-  'node-14':
+  node-14:
     docker:
       - image: circleci/node:14
     steps:
@@ -22,7 +22,7 @@ jobs:
       - run: yarn test
       - run: yarn cov:send
       - run: yarn cov:check
-  'node-16':
+  node-16:
     docker:
       - image: circleci/node:16
     steps:
@@ -39,9 +39,9 @@ jobs:
       - run: yarn test
       - run: yarn cov:send
       - run: yarn cov:check
-  'node-latest':
+  node-latest:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:18
     steps:
       - checkout
       - restore_cache:
@@ -61,7 +61,8 @@ jobs:
 workflows:
   build:
     jobs:
-      - 'node-14'
-      - 'node-16'
-      - 'node-latest':
-        context: SonarCloud
+      - node-14
+      - node-16
+      - node-latest:
+          context:
+            - sonarcloud
