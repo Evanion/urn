@@ -11,6 +11,10 @@ test('stringify set nid', (t) => {
   t.is(URN.stringify('foo', 'bar'), 'urn:bar:foo');
 });
 
+test('stringify should not duplicate nid', (t) => {
+  t.is(URN.stringify('bar:foo', 'bar'), 'urn:bar:foo');
+});
+
 test('stringify should throw error if URN parameter contains an invalid character', (t) => {
   const error = t.throws(() => URN.stringify('foo', 'bar', 'u!n'), {
     instanceOf: InvalidError,
