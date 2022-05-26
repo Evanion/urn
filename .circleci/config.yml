@@ -41,7 +41,7 @@ jobs:
       - run: yarn cov:check
   node-latest:
     docker:
-      - image: circleci/node:18
+      - image: circleci/node:latest
     steps:
       - checkout
       - restore_cache:
