@@ -1,0 +1,76 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@evanion/urn</title><meta name="description" content="Documentation for @evanion/urn"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@evanion/urn</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>@evanion/urn </h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography"><p><a href="https://circleci.com/gh/Evanion/urn/tree/main"><img src="https://circleci.com/gh/Evanion/urn/tree/main.svg?style=shield" alt="CircleCI"></a>
+<a href="https://codecov.io/gh/Evanion/urn"><img src="https://codecov.io/gh/Evanion/urn/branch/main/graph/badge.svg?token=S5V045X33K" alt="codecov"></a>
+<a href="https://sonarcloud.io/summary/new_code?id=Evanion_urn"><img src="https://sonarcloud.io/api/project_badges/measure?project=Evanion_urn&metric=sqale_index" alt="Technical Debt"></a>
+<a href="https://sonarcloud.io/summary/new_code?id=Evanion_urn"><img src="https://sonarcloud.io/api/project_badges/measure?project=Evanion_urn&metric=code_smells" alt="Code Smells"></a>
+<a href="https://sonarcloud.io/summary/new_code?id=Evanion_urn"><img src="https://sonarcloud.io/api/project_badges/measure?project=Evanion_urn&metric=bugs" alt="Bugs"></a>
+<a href="https://sonarcloud.io/summary/new_code?id=Evanion_urn"><img src="https://sonarcloud.io/api/project_badges/measure?project=Evanion_urn&metric=duplicated_lines_density" alt="Duplicated Lines (%)"></a>
+<a href="https://sonarcloud.io/summary/new_code?id=Evanion_urn"><img src="https://sonarcloud.io/api/project_badges/measure?project=Evanion_urn&metric=sqale_rating" alt="Maintainability Rating"></a>
+<a href="https://sonarcloud.io/summary/new_code?id=Evanion_urn"><img src="https://sonarcloud.io/api/project_badges/measure?project=Evanion_urn&metric=reliability_rating" alt="Reliability Rating"></a>
+<a href="https://snyk.io/test/github/Evanion/urn"><img src="https://snyk.io/test/github/Evanion/urn/badge.svg" alt="Known Vulnerabilities"></a></p>
+
+<a href="#urn" id="urn" style="color: inherit; text-decoration: none;">
+  <h1>urn</h1>
+</a>
+<p>A URN Library that makes it easier to work with more meaningful identifiers.
+The API is inspired by, and designed to be as simple as the JSON class.</p>
+<pre><code class="language-ts"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">URN</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&#39;@Evanion/urn&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-4">// You can easily extend the base class to create your own base schema</span><br/><span class="hl-5">class</span><span class="hl-1"> </span><span class="hl-6">TRN</span><span class="hl-1"> </span><span class="hl-5">extends</span><span class="hl-1"> </span><span class="hl-6">URN</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">static</span><span class="hl-1"> </span><span class="hl-5">readonly</span><span class="hl-1"> </span><span class="hl-2">urn</span><span class="hl-1"> = </span><span class="hl-3">&#39;trn&#39;</span><span class="hl-1">;</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-4">// Then you can generate a URN using the stringify method</span><br/><span class="hl-7">TRN</span><span class="hl-1">.</span><span class="hl-8">stringify</span><span class="hl-1">(</span><span class="hl-3">&#39;foo&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;bar&#39;</span><span class="hl-1">); </span><span class="hl-4">// -&gt; &#39;trn:bar:foo&#39;</span>
+</code></pre>
+
+<a href="#what-is-a-urn" id="what-is-a-urn" style="color: inherit; text-decoration: none;">
+  <h2>What is a URN?</h2>
+</a>
+<p>URN stands for <code>Universal Resource Name</code> and is part of the URI spec in <a href="https://datatracker.ietf.org/doc/html/rfc8141">RFC8141</a>. And you might have seen it in use at some major companies like AWS (strings that start with <code>ARN:...</code>). It&#39;s used to identify resources with a more descriptive string, than just a plain identifier, by also adding a namespace and schema.</p>
+
+<a href="#why-should-you-use-a-urn" id="why-should-you-use-a-urn" style="color: inherit; text-decoration: none;">
+  <h2>Why should you use a URN</h2>
+</a>
+<p>How many times have you seen a random DocumentID being thrown around in a conversation,
+and you wonder what type of DocumentID it is? Is it a <code>product</code> or <code>productCategory</code> ID?<br>A URN will help, by always include information about the namespace that the ID is referring to.</p>
+
+<a href="#philosophy" id="philosophy" style="color: inherit; text-decoration: none;">
+  <h2>Philosophy</h2>
+</a>
+<p>The idea with this library to make it as easy to work with URNs as it is to work with <code>JSON</code>.
+And the libraries API is inspired by the <code>JSON</code> API.</p>
+
+<a href="#declare-namespace" id="declare-namespace" style="color: inherit; text-decoration: none;">
+  <h2>Declare namespace</h2>
+</a>
+<p>You can easily create a namespace specific class</p>
+<pre><code class="language-ts"><span class="hl-4">// You can create namespace specific URN classes</span><br/><span class="hl-5">class</span><span class="hl-1"> </span><span class="hl-6">UserTRN</span><span class="hl-1"> </span><span class="hl-5">extends</span><span class="hl-1"> </span><span class="hl-6">TRN</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-5">static</span><span class="hl-1"> </span><span class="hl-5">readonly</span><span class="hl-1"> </span><span class="hl-2">nid</span><span class="hl-1"> = </span><span class="hl-3">&#39;user&#39;</span><span class="hl-1">;</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-4">// That will automatically create a URN with the proper namespace</span><br/><span class="hl-2">UserTRN</span><span class="hl-1">.</span><span class="hl-8">stringify</span><span class="hl-1">(</span><span class="hl-3">&#39;1337&#39;</span><span class="hl-1">); </span><span class="hl-4">// -&gt; &#39;trn:user:1337&#39;</span>
+</code></pre>
+
+<a href="#parse-urn" id="parse-urn" style="color: inherit; text-decoration: none;">
+  <h2>Parse urn</h2>
+</a>
+<p>Parsing a URN will decode it in to it&#39;s constituent parts</p>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-7">parsed</span><span class="hl-1"> = </span><span class="hl-2">UserTRN</span><span class="hl-1">.</span><span class="hl-8">parse</span><span class="hl-1">(</span><span class="hl-3">&#39;trn:user:1337&#39;</span><span class="hl-1">);</span><br/><span class="hl-2">console</span><span class="hl-1">.</span><span class="hl-8">log</span><span class="hl-1">(</span><span class="hl-2">parsed</span><span class="hl-1">); </span><span class="hl-4">// -&gt; {urn:&#39;trn&#39;, nid: &#39;user&#39;, nss: &#39;1337&#39;}</span>
+</code></pre>
+<p>If you parse a URN from another namespace ID, it will retain the namespace ID in the NSS.
+This way, each namespace should only work with plain ids when it&#39;s inside it&#39;s own namespace, and retain the namespace information if it&#39;s from another namespace ID</p>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-7">parsed</span><span class="hl-1"> = </span><span class="hl-2">UserTRN</span><span class="hl-1">.</span><span class="hl-8">parse</span><span class="hl-1">(</span><span class="hl-3">&#39;trn:order:42&#39;</span><span class="hl-1">);</span><br/><span class="hl-2">console</span><span class="hl-1">.</span><span class="hl-8">log</span><span class="hl-1">(</span><span class="hl-2">parsed</span><span class="hl-1">); </span><span class="hl-4">// -&gt; {urn: &#39;trn&#39;, nid: &#39;order&#39;, nss: &#39;order:42&#39;}</span>
+</code></pre>
+
+<a href="#validation" id="validation" style="color: inherit; text-decoration: none;">
+  <h2>Validation</h2>
+</a>
+<p>The library will attempt to validate the URN and NIDs to only contain valid characters (a-z 0-9 case insensitive)</p>
+<pre><code class="language-ts"><span class="hl-2">UserTRN</span><span class="hl-1">.</span><span class="hl-8">stringify</span><span class="hl-1">(</span><span class="hl-3">&#39;1337&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;f?o&#39;</span><span class="hl-1">); </span><span class="hl-4">// -&gt; will throw a NID ValidationError</span>
+</code></pre>
+<pre><code class="language-ts"><span class="hl-2">UserTRN</span><span class="hl-1">.</span><span class="hl-8">stringify</span><span class="hl-1">(</span><span class="hl-3">&#39;1337&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;foo&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;b!r&#39;</span><span class="hl-1">); </span><span class="hl-4">// -&gt; will throw a URN ValidationError</span>
+</code></pre>
+<p>It will won&#39;t add a namespace if it already exists</p>
+<pre><code class="language-ts"><span class="hl-2">UserTRN</span><span class="hl-1">.</span><span class="hl-8">stringify</span><span class="hl-1">(</span><span class="hl-3">&#39;user:1337&#39;</span><span class="hl-1">); </span><span class="hl-4">// -&gt; &#39;trn:user:1337&#39;</span>
+</code></pre>
+
+<a href="#caveats" id="caveats" style="color: inherit; text-decoration: none;">
+  <h2>Caveats</h2>
+</a>
+<p>Since classes aren&#39;t aware of sibling classes, strignifying a <code>NSS</code> that contains another namespace
+will cause duplication of namespaces</p>
+<pre><code class="language-ts"><span class="hl-2">UserTRN</span><span class="hl-1">.</span><span class="hl-8">stringify</span><span class="hl-1">(</span><span class="hl-3">&#39;order:42&#39;</span><span class="hl-1">); </span><span class="hl-4">// -&gt; &#39;trn:user:order:42&#39;</span>
+</code></pre>
+<p>so the recommended solution is to set the namespace to what you expect</p>
+<pre><code class="language-ts"><span class="hl-2">UserTRN</span><span class="hl-1">.</span><span class="hl-8">stringify</span><span class="hl-1">(</span><span class="hl-3">&#39;order:42&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;order&#39;</span><span class="hl-1">); </span><span class="hl-4">// -&gt; &#39;trn:order:42&#39;</span>
+</code></pre>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-class"><a href="classes/InvalidError.html" class="tsd-kind-icon">Invalid<wbr/>Error</a></li><li class="tsd-kind-class"><a href="classes/URN.html" class="tsd-kind-icon">URN</a></li><li class="tsd-kind-class"><a href="classes/ValidationError.html" class="tsd-kind-icon">Validation<wbr/>Error</a></li><li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/ParsedURN.html" class="tsd-kind-icon">ParsedURN</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#IBasicURN" class="tsd-kind-icon">IBasicURN</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#IFullURN" class="tsd-kind-icon">IFullURN</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li><li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
