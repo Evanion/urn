@@ -7,6 +7,7 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Evanion_urn&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Evanion_urn)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Evanion_urn&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Evanion_urn)
 [![Known Vulnerabilities](https://snyk.io/test/github/Evanion/urn/badge.svg)](https://snyk.io/test/github/Evanion/urn)
+![npm (scoped)](https://img.shields.io/npm/v/@evanion/urn)
 
 # urn
 
