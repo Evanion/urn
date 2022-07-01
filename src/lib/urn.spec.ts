@@ -80,3 +80,23 @@ test("Should parse URN and return all parts in object, but keep nid with nss if 
     nss: 'baz:foo',
   });
 });
+
+test('Should allow uuid as NID', (t) => {
+  let urn: string;
+  t.notThrows(
+    () => (urn = URN.stringify('6bddf037-c1d0-4ac9-bd0f-1b0c988e6c0e'))
+  );
+  t.is(urn, 'urn:nid:6bddf037-c1d0-4ac9-bd0f-1b0c988e6c0e');
+});
+
+test('Should allow NID with lodash', (t) => {
+  let urn: string;
+  t.notThrows(() => (urn = URN.stringify('foo_bar')));
+  t.is(urn, 'urn:nid:foo_bar');
+});
+
+test('Should allow NID with colon', (t) => {
+  let urn: string;
+  t.notThrows(() => (urn = URN.stringify('foo:bar')));
+  t.is(urn, 'urn:nid:foo:bar');
+});
