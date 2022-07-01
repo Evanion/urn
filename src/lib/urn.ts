@@ -65,5 +65,5 @@ export class URN {
   /**
    * Checks that a string only contains characters A-Z and 0-9 (case insensitive)
    */
-  static readonly isValid = /^[a-z0-9]*$/i;
+  static readonly isValid = /^[a-z0-9_\-:]*$/i;
 }
